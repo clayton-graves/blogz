@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+<h1>Sign Up to Build Some Blogz!!!</h1>
+</center>
+<form method='post'>
+    <label>
+        Please enter a username.
+        <input type="text" name='reg_username' value="{{failed_name}}" />
+        <span class="error">{{name_error}}</span>
+    </label>
+    <br/>
+    <label>
+        Please enter a password.
+        <input type="password" name='reg_password' value="{{failed_password}}" />
+        <span class="error">{{password_error}}</span>
+    </label>
+    <br/>
+    <label>
+        Please re-enter your password.
+        <input type="password" name='ver_password' />
+        <span class="error">{{verify_error}}</span>
+    </label>
+    <br/>
+    <input type="submit" value='Sign Up' />
+</form>
+<hr/>
+{% endblock %}

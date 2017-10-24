@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<center>
+    <h1>Login!</h1>
+</center>
+<form method='post'>
+    <label>
+        Please enter your username.
+        <input type="text" name='login_name' value="{{failed_login}}" />
+        <span class="error">{{login_error}}</span>
+    </label>
+    <br/>
+    <label>
+        Please enter your password.
+        <input type="password" name='login_password' value="{{failed_logpass}}" />
+        <span class="error">{{logpass_error}}</span>
+    </label>
+    <br/>
+    <input type="submit" value='Log In' />
+</form>
+<br/>
+<p>Don't have an account? <a href='/sign_up'>Create one!</a></p>
+<hr/>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Blog Posts!!!</h1>
+<hr/>
+<br/>
+
+{% for a_user in userss %}
+{% for a_blog in blogss if a_blog.owner == a_user %}
+<h3><a href="/blog?id={{a_blog.id}}">{{a_blog.title}}</a></h3>
+<br/>
+<p>{{a_blog.body}}</p>
+<br/>
+<h6>Written by: <a href="/blog?user={{a_user.id}}">{{a_user.username}}</a></h6>
+<hr/>
+{% endfor %}
+{% endfor %}
+
+
+{#
+{% for a_blog in blogss %}
+
+<h3><a href="/blog?id={{a_blog.id}}">{{a_blog.title}}</a></h3>
+<br/>
+<p>{{a_blog.body}}</p>
+<br/>
+<h6>Written by: {{a_user.username}}</h6>
+<hr/>
+
+
+{% endfor %}
+
+
+
+
+#}
+{% endblock %}
